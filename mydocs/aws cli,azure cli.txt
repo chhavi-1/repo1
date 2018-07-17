@@ -1,0 +1,40 @@
+aws logs create-export-task --task-name "my-log-group-19-06-2018" --log-group-name "/aws/lambda/asglambdaRole" --from 1529316000000 --to 1529488800000 --destination "chhavibucket" --destination-prefix "exportedlogs"
+
+Access Key for User - Administrator 
+aws configure
+Access Key ID - AKIAIJQP4B7RCMROMYBA
+Secret Access Key - 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
+
+aws logs describe-export-tasks --task-id "dcdbf100-0ad2-4a59-a26c-6b40548e6244"
+
+---------------------------------------------------------------------------------------------------------------
+                                                 AZURE CLI
+                                             -----------------
+az monitor log-profiles create --name "default" --location null --locations "Central US" "East US 2" --categories "Delete" "Write" "Action"  --enabled false --days 7 --storage-account-id "/subscriptions/c0bdc28b-dc42-4a1e-b00f-412e8f08c13c/resourceGroups/myresource_group/providers/Microsoft.Storage/storageAccounts/chhavistorage"
+
+For AZURE CLI
+---------------
+Application Name = myscaleset
+Application id = 5a6ddab2-01e3-4516-8f0c-842497da9757
+Key1 = 1YYLGu7xhVfOlGph6ZJZZI1g2slOkQrtF73Cp3kZmr4=
+
+Directory ID - 1a6dbb80-5290-4fd1-a938-0ad7795dfd7a - Tenant ID
+
+Application Service Login
+-----------------------------
+az login --service-principal myscaleset --username 5a6ddab2-01e3-4516-8f0c-842497da9757 --password 1YYLGu7xhVfOlGph6ZJZZI1g2slOkQrtF73Cp3kZmr4= --tenant 1a6dbb80-5290-4fd1-a938-0ad7795dfd7a
+
+To terminate an instance of vitual machine using cmd
+-------------------------------------------------------
+
+{
+    "tenantId": "1a6dbb80-5290-4fd1-a938-0ad7795dfd7a",
+    "subscriptionId": "c0bdc28b-dc42-4a1e-b00f-412e8f08c13c",
+    "clientId": "b5d89d5c-c8e1-4e31-74d1-50396a1aeeca",
+    "clientSecret": "supersecret",
+    "testDuration": "300-600",
+    "testDelay": "30-60",
+    "jobs": [
+        { "type": "vmss", "operation": "*", "resourceGroup": "myresource_group", "resource": "myscaleset:1" }
+    ]
+}
